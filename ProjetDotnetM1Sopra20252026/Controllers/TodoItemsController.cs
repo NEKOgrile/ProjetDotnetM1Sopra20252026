@@ -21,6 +21,11 @@ namespace ProjetDotnetM1Sopra20252026.Controllers
         }
 
         // GET: api/TodoItems
+        /// <summary>
+        ///  recupérer la liste des taches
+        /// </summary>
+        /// <returns></returns>
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<TodoItem>>> GetTodoItems()
         {
@@ -74,6 +79,24 @@ namespace ProjetDotnetM1Sopra20252026.Controllers
 
         // POST: api/TodoItems
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
+        
+        ///<summary>
+        ///Creat a TODOItem
+        /// </summary>
+        ///<remarks>
+        /// sample reauest 
+        /// 
+        ///     POST /TODO
+        ///     {
+        ///     "id" : 1,
+        ///     "name" : item1,
+        ///     "isComplete" : true
+        ///     }
+        /// </remarks>
+        ///<param name="item"></param>
+        ///<returns>A newly created TodoItem</returns>
+        ///<response code="201">return the newly created item</response>
+        ///<response code="400">if the item is null</response>
         [HttpPost]
         public async Task<ActionResult<TodoItem>> PostTodoItem(TodoItem todoItem)
         {
